@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gift Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">Gift<span>Shop</span></a>
+      <nav class="nav">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">☰</button>
+        <ul id="primary-nav" class="nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Thoughtful gifts for every occasion</h1>
+          <p>Find curated gifts they will actually love. Fast shipping and beautiful packaging included.</p>
+          <a class="btn btn-primary" href="#products">Shop now</a>
+        </div>
+        <div class="hero-media">
+          <img src="https://images.unsplash.com/photo-1600959907703-125ba1374a12?q=80&w=1200&auto=format&fit=crop" alt="Gift boxes" />
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="products">
+      <div class="container">
+        <h2>Best sellers</h2>
+        <div class="grid products-grid">
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop" alt="Candle" />
+            <div class="card-body">
+              <h3>Scented Candle</h3>
+              <p>Lavender & cedarwood. 50 hr burn time.</p>
+              <button class="btn">Add to cart</button>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop" alt="Mug" />
+            <div class="card-body">
+              <h3>Ceramic Mug</h3>
+              <p>Handmade stoneware with matte glaze.</p>
+              <button class="btn">Add to cart</button>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?q=80&w=800&auto=format&fit=crop" alt="Notebook" />
+            <div class="card-body">
+              <h3>Dot Grid Notebook</h3>
+              <p>Hardcover, 160 pages of 120 gsm paper.</p>
+              <button class="btn">Add to cart</button>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1542326237-94b1c5a538d4?q=80&w=800&auto=format&fit=crop" alt="Chocolate" />
+            <div class="card-body">
+              <h3>Artisan Chocolates</h3>
+              <p>Assortment of 12 hand-crafted truffles.</p>
+              <button class="btn">Add to cart</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> GiftShop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.getElementById('primary-nav');
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      navList.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
+
